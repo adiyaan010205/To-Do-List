@@ -1,5 +1,4 @@
 
-
 # To-Do List
 
 A modern, animated, and themeable to-do list web app with real-time digital clock, dynamic greetings, and beautiful color palettes.
@@ -23,7 +22,7 @@ A modern, animated, and themeable to-do list web app with real-time digital cloc
 
 1. **Clone or Download**
     ```bash
-    git clone https://github.com/yourusername/your-todo-list.git
+    git clone https://github.com/adiyaan010205/To-Do-List.git
     ```
     Or just download and unzip the repo.
 
@@ -35,7 +34,9 @@ A modern, animated, and themeable to-do list web app with real-time digital cloc
 
 ## 📸 Screenshots
 
-![Animated To-Do List Screenshot 🖌️ Customization
+![image](https://github.com/user-attachments/assets/61f58013-7dfc-4536-a9b9-7db54ac3e7b8)
+
+🖌️ Customization
 
 - **Themes:** Click the colored circles at the top-right to change the color palette.
 - **Clock:** The digital clock at the top-left updates live and matches your theme.
