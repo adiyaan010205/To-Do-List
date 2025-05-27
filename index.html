@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="toast-container" class="toast-container"></div>
+
+    <div class="time-display">
+        <span id="live-hours">00</span>:<span id="live-minutes">00</span>:<span id="live-seconds">00</span>
+    </div>
+
+    <div class="theme-switcher" aria-label="Theme Switcher">
+        <button class="palette-btn" title="Blissful Blues" data-theme="blissful-blues"></button>
+        <button class="palette-btn" title="Dark Elegance" data-theme="dark-elegance"></button>
+        <button class="palette-btn" title="Warm Sunset" data-theme="warm-sunset"></button>
+        <button class="palette-btn" title="Minimal Monochrome" data-theme="minimal-monochrome"></button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="title">
+              <i class="fas fa-check-circle"></i>
+              Welcome To Your To-Do List
+            </h1>
+            <div class="stats">
+                <span class="total-tasks">Total: <span id="total-count">0</span></span>
+                <span class="completed-tasks">Completed: <span id="completed-count">0</span></span>
+            </div>
+        </div>
+        
+        <form class="input-section" id="todo-form">
+            <div class="input-container">
+                <input type="text" id="todo-input" placeholder="Add a new task..." required>
+                <button type="submit" class="add-btn">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </form>
+        
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-list"></i> All
+            </button>
+            <button class="filter-btn" data-filter="pending">
+                <i class="fas fa-clock"></i> Pending
+            </button>
+            <button class="filter-btn" data-filter="completed">
+                <i class="fas fa-check"></i> Completed
+            </button>
+            <button class="clear-btn" id="clear-all">
+                <i class="fas fa-trash"></i> Clear All
+            </button>
+        </div>
+        
+        <ul class="todo-list" id="todo-list"></ul>
+        
+        <div class="empty-state" id="empty-state">
+            <i class="fas fa-clipboard-list"></i>
+            <p>No tasks yet. Add one above!</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

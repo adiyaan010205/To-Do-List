@@ -1,0 +1,395 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #51e2f5 0%, #4facfe 100%);
+    --secondary-gradient: linear-gradient(135deg, #9df9ef 0%, #00f2fe 100%);
+    --bg-primary: #f8fbff;
+    --bg-secondary: #e8f4f8;
+    --bg-card: #ffffff;
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --accent-color: #51e2f5;
+    --shadow-color: rgba(79, 172, 254, 0.12);
+}
+
+[data-theme="dark-elegance"] {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --bg-primary: #18192a;
+    --bg-secondary: #23244d;
+    --bg-card: #23244d;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3cc;
+    --accent-color: #ff6b9d;
+    --shadow-color: rgba(255, 107, 157, 0.13);
+}
+
+[data-theme="warm-sunset"] {
+    --primary-gradient: linear-gradient(135deg, #ff6b9d 0%, #f093fb 100%);
+    --secondary-gradient: linear-gradient(135deg, #fee140 0%, #fa709a 100%);
+    --bg-primary: #fff5f7;
+    --bg-secondary: #ffe8e8;
+    --bg-card: #fff0f6;
+    --text-primary: #4a2a35;
+    --text-secondary: #7a5a65;
+    --accent-color: #ff6b9d;
+    --shadow-color: rgba(250, 112, 154, 0.12);
+}
+
+[data-theme="minimal-monochrome"] {
+    --primary-gradient: linear-gradient(135deg, #f0f0f0 0%, #d0d0d0 100%);
+    --secondary-gradient: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 100%);
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --bg-card: #fafafa;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --accent-color: #444444;
+    --shadow-color: rgba(0, 0, 0, 0.10);
+}
+
+.theme-switcher {
+    position: fixed;
+    top: 22px;
+    right: 22px;
+    display: flex;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.palette-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.18);
+    outline: none;
+}
+.palette-btn[data-theme="blissful-blues"] {
+    background: linear-gradient(135deg, #51e2f5, #4facfe);
+}
+.palette-btn[data-theme="dark-elegance"] {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+.palette-btn[data-theme="warm-sunset"] {
+    background: linear-gradient(135deg, #ff6b9d, #f093fb);
+}
+.palette-btn[data-theme="minimal-monochrome"] {
+    background: linear-gradient(135deg, #f0f0f0, #d0d0d0);
+}
+.palette-btn.active,
+.palette-btn:focus {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 3px var(--accent-color), 0 2px 5px rgba(0,0,0,0.18);
+    border-color: var(--accent-color);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background 0.5s, color 0.5s;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 480px;
+    margin: 120px auto 32px auto;
+    background: var(--bg-card);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px var(--shadow-color);
+    padding: 32px 24px 24px 24px;
+    transition: background 0.5s, box-shadow 0.5s;
+}
+
+
+.header .title {
+    font-size: 2rem;
+    font-weight: 600;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stats {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 18px;
+    margin-bottom: 12px;
+}
+
+.input-section {
+    margin-bottom: 22px;
+}
+
+.input-container {
+    display: flex;
+    gap: 8px;
+}
+
+.input-section input {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 2px solid var(--accent-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s, background 0.3s;
+}
+
+.input-section input:focus {
+    border-color: var(--primary-gradient);
+}
+
+.add-btn {
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 10px;
+    padding: 0 18px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn:hover {
+    background: var(--secondary-gradient);
+}
+
+.filter-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.filter-btn,
+.clear-btn {
+    border: none;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--primary-gradient);
+    color: #fff;
+}
+
+.clear-btn {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.clear-btn:hover {
+    opacity: 0.85;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.todo-list li {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    font-size: 1.1rem;
+    transition: background 0.4s, color 0.4s;
+    position: relative;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+.todo-list li.removing {
+    animation: fadeOutDown 0.3s ease-out forwards;
+}
+
+.todo-list li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.todo-list .actions {
+    display: flex;
+    gap: 12px;
+}
+
+.todo-list button {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+    padding: 4px;
+}
+
+.todo-list button:hover {
+    color: var(--primary-gradient);
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-top: 28px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.empty-state i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast {
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slideIn 0.3s ease-out;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    background: var(--accent-color);
+    opacity: 0.95;
+    pointer-events: auto;
+}
+
+.toast.fade-out {
+    animation: slideOut 0.3s ease-out forwards;
+}
+
+.toast.success {
+    background: var(--accent-color);
+}
+
+.toast.error {
+    background: #ff4444;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 0.95;
+    }
+}
+
+@keyframes slideOut {
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+.time-display {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    box-shadow: 0 3px 12px var(--shadow-color);
+    z-index: 1000;
+    display: flex;
+    gap: 4px;
+}
+.time-display span {
+    min-width: 30px;
+    text-align: center;
+    background: var(--bg-secondary);
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 2px solid var(--accent-color);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 16px 6px 18px 6px;
+        margin: 60px 2vw 20px 2vw;
+    }
+    .theme-switcher {
+        top: 12px;
+        right: 10px;
+        gap: 8px;
+    }
+    .time-display {
+        top: 12px;
+        left: 10px;
+        font-size: 1.1rem;
+        padding: 8px 12px;
+    }
+    .time-display span {
+        min-width: 22px;
+        padding: 2px 5px;
+        font-size: 1rem;
+    }
+}
