@@ -1,6 +1,6 @@
 
 
-# Animated To-Do List
+# To-Do List
 
 A modern, animated, and themeable to-do list web app with real-time digital clock, dynamic greetings, and beautiful color palettes.
 
